@@ -1,6 +1,8 @@
 # SimpleNodeApp
 
-**Without Database**
+**Finally Completed**
+
+The app creates a database named "myDB". Then it adds 2 collection in "myDB". They are "order" and "orderItems".
 
 At this stage you can send a POST request a item with ID to add it to orderItems. Also you can send a POST request to perform a order with ID. 
 
@@ -15,7 +17,7 @@ body=>
         "quantity": 3,
         "product" : "Orange"
     }
-On success you will get the response: "Order Item is added to the list."
+On success you will get the response: "This order item has been added to the orderItems list."
 
 And again
 
@@ -26,7 +28,8 @@ body=>
         "product" : "Banana"
     }
 
-On success you will get the response: "Order Item is added to the list."
+On success you will get the response: "This order item has been added to the orderItems list."
+
 
 POST request- /order:
 body=>
@@ -34,7 +37,7 @@ body=>
         "id":1,
         "phone": "+889854321"
     }
-On success you will get the response: "New Order has been placed."
+On success you will get the response: "New Order with id: 1 has been placed."
 
 
 
@@ -66,24 +69,25 @@ body=>
 
 You will get response:
 {
-    "1": {
-        "id": 1,
-        "orderItems": [
-            {
-                "quantity": 3,
-                "product": "Orange"
-            }
-        ],
-        "phone": "+880123456789"
-    },
-    "2": {
-        "id": 2,
-        "orderItems": [
-            {
-                "quantity": 4,
-                "product": "Apple"
-            }
-        ],
-        "phone": "+889854321"
-    }
+    "All Orders": [
+        {
+            "_id": "610a843bad1cc64dc2296edf",
+            "id": 1,
+            "orderItems": [
+                {
+                    "quantity": 3,
+                    "product": "Orange"
+                },
+                {
+                    "quantity": 2,
+                    "product": "Banana"
+                }
+            ],
+            "phone": "+88987654321"
+        }
+    ]
 }
+
+
+
+Another user's orderItems is different. So their order is also different.
